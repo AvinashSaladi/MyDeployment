@@ -17,5 +17,26 @@
   </dependencies>
   <build>
     <finalName>AJGTproject</finalName>
+    <plugins>
+     <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-resources-plugin</artifactId>
+      <version>3.2.0</version>
+      <executions>
+        <execution>
+          <id>filter-resource</id>
+          <phase>process-resources</phase>
+          <goals>
+            <goal>resources</goal>
+          </goals>
+          <configuration>
+            <filters>
+              <filter>${project.version}</filter>
+            </filters>
+          </configuration>
+        </execution>
+      </executions>
+    </plugin>
+  </plugins>
   </build>
 </project>
